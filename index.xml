@@ -6,10 +6,29 @@
     <description>Recent content on print(&#39;人生苦短，我用Python3&#39;)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Dec 2019 15:58:38 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 16:30:54 +0800</lastBuildDate>
     
 	<atom:link href="https://birdflyiot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Contact</title>
+      <link>https://birdflyiot.github.io/pages/contact/</link>
+      <pubDate>Sun, 29 Dec 2019 16:30:54 +0800</pubDate>
+      
+      <guid>https://birdflyiot.github.io/pages/contact/</guid>
+      <description>Visit my site on CSDN
+或者关注我的微信公众号 技术宅AI代码控</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://birdflyiot.github.io/pages/about/</link>
+      <pubDate>Sun, 29 Dec 2019 16:25:26 +0800</pubDate>
+      
+      <guid>https://birdflyiot.github.io/pages/about/</guid>
+      <description>自己的一个网上小窝 写写编程心得 记录开发实践 希望能在若干年后 回忆起那些代码 能欣慰地说 我的一生没有因为碌碌无为而羞愧 也没有因为虚度年华而悔恨 我把最美的方法献给了自己 最热爱的事业 </description>
+    </item>
     
     <item>
       <title>Contact</title>
