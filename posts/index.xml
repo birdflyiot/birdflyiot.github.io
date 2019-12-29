@@ -6,10 +6,19 @@
     <description>Recent content in Posts on My New Hugo Site For My First Blog Test！</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Dec 2019 10:33:12 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 11:16:11 +0800</lastBuildDate>
     
 	<atom:link href="https://birdflyiot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://birdflyiot.github.io/posts/about/</link>
+      <pubDate>Sun, 29 Dec 2019 11:16:11 +0800</pubDate>
+      
+      <guid>https://birdflyiot.github.io/posts/about/</guid>
+      <description>自己的一个网上小窝 写写编程心得 记录开发实践 希望能在若干年后 回忆起那些代码 能欣慰地说 我的一生没有因为碌碌无为而羞愧 也没有因为虚度年华而悔恨 我把最美的方法献给了自己 最热爱的事业 </description>
+    </item>
     
     <item>
       <title>My Second Post</title>
