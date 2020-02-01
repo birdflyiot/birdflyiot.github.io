@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Basemap手册——第二章进阶（一）学习绘制疫请地图 - 飞鸟物联·智享云端</title>
+<meta name="description" content="0x01 前言 大约在n年前（n&amp;gt;=2）,大约也是在这样的一个冬季，我倚着暖气，喝着红茶，码着键盘，在Base Map魅力下，在世界地图上遨游。窗外的雪花纷纷扬扬，压在枯枝上，盖在松柏顶，世界一片洁白纯净。大街上零零星星有三两个行人，让空旷的街道更显得静谧却不失安详。
+今天的街上也是这样，零零星星的三两个行人。行色匆匆，淡蓝色的口罩难掩神情的恐慌。没有大雪封路，没有冬风凛冽，即使天空蔚蓝，阳光明媚，也难免让人感到一丝萧瑟。
+随着疫情的蔓延，疫情地图开始在各个媒体平台出现，它极大的方便了人们对疫情实时动态的了解。我也想到了两年前发的这篇博文【译】Basemap手册——第一章 入门（始于颜值），之前一直没有在意，今天翻翻这篇博文，看到一些留言等，我打算继续翻译第二篇，顺带做一个自己的疫情地图，这就是技术宅的宅生活吧！
+武汉加油，中国加油 0x02 环境配置 有评论反映部分文件下载不了，安装之后报错，刚好我这个电脑上没有安装Basemap，我就重新安装一下下。我依然参照了神农尝百草&amp;mdash;Windows环境下为Python3.X安装basemap的文章内容，按照左后一种安装方法，再次对博主moxigandashu表示感谢。如果安装不成功，可以参照官方文档Installing ，谨记谨记，有问题，看文档，看官方文档，才是正解！网上大多数博客都属于东拼西凑，包括我这篇文章也是，限于我的能力，错误疏漏在所难免，所以在学习技术的时候，多看官方文档才是提高技术的根本之道！
+ 确定python版本  我的版本是python 3.8.0 64位
+ 下载pyproj和basemap
+在https://www.lfd.uci.edu/~gohlke/pythonlibs/ 下载
+basemap‑1.2.1‑cp38‑cp38‑win_amd64.whl文件比较大，可能要多等几分钟。
+pyproj‑2.4.2.post1‑cp38‑cp38‑win_amd64.whl
+实测这些文件都是可以正常下载的。
+  打开cmd，进入所下载的文件的目录
+  安装pyproj和basemap
+pip install basemap‑1.2.1‑cp38‑cp38‑win_amd64.whl
+pip install pyproj‑2.4.2.post1‑cp38‑cp38‑win_amd64.whl 
+  测试安装结果 from mpl_toolkits.basemap import Basemap
+  0x03下面开始正式翻译 原文地址可查看basemaptutorial
+Basemap 所有用Basemap库创建的地图，在创建之前都需要创建一个Basemap实例：
+mpl_toolkits.basemap.Basemap(llcrnrlon=None, llcrnrlat=None, urcrnrlon=None, urcrnrlat=None, llcrnrx=None, llcrnry=None, urcrnrx=None, urcrnry=None, width=None, height=None, projection=’cyl’, resolution=’c’, area_thresh=None, rsphere=6370997.0, ellps=None, lat_ts=None, lat_1=None, lat_2=None, lat_0=None, lon_0=None, lon_1=None, lon_2=None, o_lon_p=None, o_lat_p=None, k_0=None, no_rot=False, suppress_ticks=True, satellite_height=35786000, boundinglat=None, fix_aspect=True, anchor=’C’, celestial=False, round=False, epsg=None, ax=None) 这个构造函数里面包含好多个可选的参数，它们的用法如下："/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://birdflyiot.github.io/posts/basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0%E8%BF%9B%E9%98%B6%E4%B8%80%E5%AD%A6%E4%B9%A0%E7%BB%98%E5%88%B6%E7%96%AB%E8%AF%B7%E5%9C%B0%E5%9B%BE/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="0x01 前言 大约在n年前（n&amp;gt;=2）,大约也是在这样的一个冬季，我倚着暖气，喝着红茶，码着键盘，在Base Map魅力下，在世界地图上遨游。窗外的雪花纷纷扬扬，压在枯枝上，盖在松柏顶，世界一片洁白纯净。大街上零零星星有三两个行人，让空旷的街道更显得静谧却不失安详。
+今天的街上也是这样，零零星星的三两个行人。行色匆匆，淡蓝色的口罩难掩神情的恐慌。没有大雪封路，没有冬风凛冽，即使天空蔚蓝，阳光明媚，也难免让人感到一丝萧瑟。
+随着疫情的蔓延，疫情地图开始在各个媒体平台出现，它极大的方便了人们对疫情实时动态的了解。我也想到了两年前发的这篇博文【译】Basemap手册——第一章 入门（始于颜值），之前一直没有在意，今天翻翻这篇博文，看到一些留言等，我打算继续翻译第二篇，顺带做一个自己的疫情地图，这就是技术宅的宅生活吧！
+武汉加油，中国加油 0x02 环境配置 有评论反映部分文件下载不了，安装之后报错，刚好我这个电脑上没有安装Basemap，我就重新安装一下下。我依然参照了神农尝百草&amp;mdash;Windows环境下为Python3.X安装basemap的文章内容，按照左后一种安装方法，再次对博主moxigandashu表示感谢。如果安装不成功，可以参照官方文档Installing ，谨记谨记，有问题，看文档，看官方文档，才是正解！网上大多数博客都属于东拼西凑，包括我这篇文章也是，限于我的能力，错误疏漏在所难免，所以在学习技术的时候，多看官方文档才是提高技术的根本之道！
+ 确定python版本  我的版本是python 3.8.0 64位
+ 下载pyproj和basemap
+在https://www.lfd.uci.edu/~gohlke/pythonlibs/ 下载
+basemap‑1.2.1‑cp38‑cp38‑win_amd64.whl文件比较大，可能要多等几分钟。
+pyproj‑2.4.2.post1‑cp38‑cp38‑win_amd64.whl
+实测这些文件都是可以正常下载的。
+  打开cmd，进入所下载的文件的目录
+  安装pyproj和basemap
+pip install basemap‑1.2.1‑cp38‑cp38‑win_amd64.whl
+pip install pyproj‑2.4.2.post1‑cp38‑cp38‑win_amd64.whl 
+  测试安装结果 from mpl_toolkits.basemap import Basemap
+  0x03下面开始正式翻译 原文地址可查看basemaptutorial
+Basemap 所有用Basemap库创建的地图，在创建之前都需要创建一个Basemap实例：
+mpl_toolkits.basemap.Basemap(llcrnrlon=None, llcrnrlat=None, urcrnrlon=None, urcrnrlat=None, llcrnrx=None, llcrnry=None, urcrnrx=None, urcrnry=None, width=None, height=None, projection=’cyl’, resolution=’c’, area_thresh=None, rsphere=6370997.0, ellps=None, lat_ts=None, lat_1=None, lat_2=None, lat_0=None, lon_0=None, lon_1=None, lon_2=None, o_lon_p=None, o_lat_p=None, k_0=None, no_rot=False, suppress_ticks=True, satellite_height=35786000, boundinglat=None, fix_aspect=True, anchor=’C’, celestial=False, round=False, epsg=None, ax=None) 这个构造函数里面包含好多个可选的参数，它们的用法如下：" />
+<meta name="twitter:title" content="Basemap手册——第二章进阶（一）学习绘制疫请地图 - 飞鸟物联·智享云端" />
+<meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="" />
+
+
+<meta property="og:type" content="article" />
+<meta content="Basemap手册——第二章进阶（一）学习绘制疫请地图 - 飞鸟物联·智享云端" property="og:title">
+<meta content="0x01 前言 大约在n年前（n&amp;gt;=2）,大约也是在这样的一个冬季，我倚着暖气，喝着红茶，码着键盘，在Base Map魅力下，在世界地图上遨游。窗外的雪花纷纷扬扬，压在枯枝上，盖在松柏顶，世界一片洁白纯净。大街上零零星星有三两个行人，让空旷的街道更显得静谧却不失安详。
+今天的街上也是这样，零零星星的三两个行人。行色匆匆，淡蓝色的口罩难掩神情的恐慌。没有大雪封路，没有冬风凛冽，即使天空蔚蓝，阳光明媚，也难免让人感到一丝萧瑟。
+随着疫情的蔓延，疫情地图开始在各个媒体平台出现，它极大的方便了人们对疫情实时动态的了解。我也想到了两年前发的这篇博文【译】Basemap手册——第一章 入门（始于颜值），之前一直没有在意，今天翻翻这篇博文，看到一些留言等，我打算继续翻译第二篇，顺带做一个自己的疫情地图，这就是技术宅的宅生活吧！
+武汉加油，中国加油 0x02 环境配置 有评论反映部分文件下载不了，安装之后报错，刚好我这个电脑上没有安装Basemap，我就重新安装一下下。我依然参照了神农尝百草&amp;mdash;Windows环境下为Python3.X安装basemap的文章内容，按照左后一种安装方法，再次对博主moxigandashu表示感谢。如果安装不成功，可以参照官方文档Installing ，谨记谨记，有问题，看文档，看官方文档，才是正解！网上大多数博客都属于东拼西凑，包括我这篇文章也是，限于我的能力，错误疏漏在所难免，所以在学习技术的时候，多看官方文档才是提高技术的根本之道！
+ 确定python版本  我的版本是python 3.8.0 64位
+ 下载pyproj和basemap
+在https://www.lfd.uci.edu/~gohlke/pythonlibs/ 下载
+basemap‑1.2.1‑cp38‑cp38‑win_amd64.whl文件比较大，可能要多等几分钟。
+pyproj‑2.4.2.post1‑cp38‑cp38‑win_amd64.whl
+实测这些文件都是可以正常下载的。
+  打开cmd，进入所下载的文件的目录
+  安装pyproj和basemap
+pip install basemap‑1.2.1‑cp38‑cp38‑win_amd64.whl
+pip install pyproj‑2.4.2.post1‑cp38‑cp38‑win_amd64.whl 
+  测试安装结果 from mpl_toolkits.basemap import Basemap
+  0x03下面开始正式翻译 原文地址可查看basemaptutorial
+Basemap 所有用Basemap库创建的地图，在创建之前都需要创建一个Basemap实例：
+mpl_toolkits.basemap.Basemap(llcrnrlon=None, llcrnrlat=None, urcrnrlon=None, urcrnrlat=None, llcrnrx=None, llcrnry=None, urcrnrx=None, urcrnry=None, width=None, height=None, projection=’cyl’, resolution=’c’, area_thresh=None, rsphere=6370997.0, ellps=None, lat_ts=None, lat_1=None, lat_2=None, lat_0=None, lon_0=None, lon_1=None, lon_2=None, o_lon_p=None, o_lat_p=None, k_0=None, no_rot=False, suppress_ticks=True, satellite_height=35786000, boundinglat=None, fix_aspect=True, anchor=’C’, celestial=False, round=False, epsg=None, ax=None) 这个构造函数里面包含好多个可选的参数，它们的用法如下：" property="og:description">
+<meta property="og:url" content="https://birdflyiot.github.io/posts/basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0%E8%BF%9B%E9%98%B6%E4%B8%80%E5%AD%A6%E4%B9%A0%E7%BB%98%E5%88%B6%E7%96%AB%E8%AF%B7%E5%9C%B0%E5%9B%BE/" />
+<meta property="og:site_name" content="飞鸟物联·智享云端" />
+
+<meta property="article:published_time" content="2020-02-01 09:04:35 &#43;0800 CST" />
+
+
+
+
+
+<script type="application/ld+json">
+{ 
+    "@context": "http://schema.org", 
+    "@type": "BlogPosting",
+    "headline": "Basemap手册——第二章进阶（一）学习绘制疫请地图",
+    "genre": "",  
+    "url": "https:\/\/birdflyiot.github.io\/posts\/basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0%E8%BF%9B%E9%98%B6%E4%B8%80%E5%AD%A6%E4%B9%A0%E7%BB%98%E5%88%B6%E7%96%AB%E8%AF%B7%E5%9C%B0%E5%9B%BE\/",
+    "datePublished": "2020-02-01 09:04:35 \x2b0800 CST",
+    "description": "0x01 前言 大约在n年前（n\x26gt;=2）,大约也是在这样的一个冬季，我倚着暖气，喝着红茶，码着键盘，在Base Map魅力下，在世界地图上遨游。窗外的雪花纷纷扬扬，压在枯枝上，盖在松柏顶，世界一片洁白纯净。大街上零零星星有三两个行人，让空旷的街道更显得静谧却不失安详。\n今天的街上也是这样，零零星星的三两个行人。行色匆匆，淡蓝色的口罩难掩神情的恐慌。没有大雪封路，没有冬风凛冽，即使天空蔚蓝，阳光明媚，也难免让人感到一丝萧瑟。\n随着疫情的蔓延，疫情地图开始在各个媒体平台出现，它极大的方便了人们对疫情实时动态的了解。我也想到了两年前发的这篇博文【译】Basemap手册——第一章 入门（始于颜值），之前一直没有在意，今天翻翻这篇博文，看到一些留言等，我打算继续翻译第二篇，顺带做一个自己的疫情地图，这就是技术宅的宅生活吧！\n武汉加油，中国加油 0x02 环境配置 有评论反映部分文件下载不了，安装之后报错，刚好我这个电脑上没有安装Basemap，我就重新安装一下下。我依然参照了神农尝百草\x26mdash;Windows环境下为Python3.X安装basemap的文章内容，按照左后一种安装方法，再次对博主moxigandashu表示感谢。如果安装不成功，可以参照官方文档Installing ，谨记谨记，有问题，看文档，看官方文档，才是正解！网上大多数博客都属于东拼西凑，包括我这篇文章也是，限于我的能力，错误疏漏在所难免，所以在学习技术的时候，多看官方文档才是提高技术的根本之道！\n 确定python版本  我的版本是python 3.8.0 64位\n 下载pyproj和basemap\n在https:\/\/www.lfd.uci.edu\/~gohlke\/pythonlibs\/ 下载\nbasemap‑1.2.1‑cp38‑cp38‑win_amd64.whl文件比较大，可能要多等几分钟。\npyproj‑2.4.2.post1‑cp38‑cp38‑win_amd64.whl\n实测这些文件都是可以正常下载的。\n  打开cmd，进入所下载的文件的目录\n  安装pyproj和basemap\npip install basemap‑1.2.1‑cp38‑cp38‑win_amd64.whl\npip install pyproj‑2.4.2.post1‑cp38‑cp38‑win_amd64.whl \n  测试安装结果 from mpl_toolkits.basemap import Basemap\n  0x03下面开始正式翻译 原文地址可查看basemaptutorial\nBasemap 所有用Basemap库创建的地图，在创建之前都需要创建一个Basemap实例：\nmpl_toolkits.basemap.Basemap(llcrnrlon=None, llcrnrlat=None, urcrnrlon=None, urcrnrlat=None, llcrnrx=None, llcrnry=None, urcrnrx=None, urcrnry=None, width=None, height=None, projection=’cyl’, resolution=’c’, area_thresh=None, rsphere=6370997.0, ellps=None, lat_ts=None, lat_1=None, lat_2=None, lat_0=None, lon_0=None, lon_1=None, lon_2=None, o_lon_p=None, o_lat_p=None, k_0=None, no_rot=False, suppress_ticks=True, satellite_height=35786000, boundinglat=None, fix_aspect=True, anchor=’C’, celestial=False, round=False, epsg=None, ax=None) 这个构造函数里面包含好多个可选的参数，它们的用法如下：",
+    "author": {
+        "@type": "Person",
+        "name": ""
+    }
+ }
+</script>
+
+
+
+
+<link rel="stylesheet" href="/sass/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://birdflyiot.github.io/">飞鸟物联·智享云端</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://birdflyiot.github.io/pages/about/">About</a></li>
+        <li><a href="https://birdflyiot.github.io/pages/contact/">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Download <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a target="_blank" href="https://github.com/bul-ikana/hugo-cards">Project</a></li>
+            <li><a href="https://github.com/bul-ikana/hugo-cards.git">Download</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a target="_blank" href="https://themes.gohugo.io/">More Themes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+    <div class="container">
+      <div class="wrapper">
+        
+<div class="row">
+<div class="col-md-8">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+          <header class="post-header">
+            <h1 class="post-title" itemprop="name headline">Basemap手册——第二章进阶（一）学习绘制疫请地图</h1>
+            <p class="post-meta"><time datetime='2020-02-01T09:04:35&#43;08:00' itemprop="datePublished">February 1, 2020</time></p>
+                 
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <h2 id="0x01-">0x01 前言</h2>
+<p>大约在n年前（n&gt;=2）,大约也是在这样的一个冬季，我倚着暖气，喝着红茶，码着键盘，在Base Map魅力下，在世界地图上遨游。窗外的雪花纷纷扬扬，压在枯枝上，盖在松柏顶，世界一片洁白纯净。大街上零零星星有三两个行人，让空旷的街道更显得静谧却不失安详。</p>
+<p>今天的街上也是这样，零零星星的三两个行人。行色匆匆，淡蓝色的口罩难掩神情的恐慌。没有大雪封路，没有冬风凛冽，即使天空蔚蓝，阳光明媚，也难免让人感到一丝萧瑟。</p>
+<p>随着疫情的蔓延，疫情地图开始在各个媒体平台出现，它极大的方便了人们对疫情实时动态的了解。我也想到了两年前发的这篇博文<a href="https://blog.csdn.net/pengranxindong/article/details/79136486">【译】Basemap手册——第一章 入门（始于颜值）</a>，之前一直没有在意，今天翻翻这篇博文，看到一些留言等，我打算继续翻译第二篇，顺带做一个自己的疫情地图，这就是技术宅的宅生活吧！</p>
+<h3 id="heading"><em><strong>武汉加油，中国加油</strong></em></h3>
+<h2 id="0x02-">0x02 环境配置</h2>
+<p>有评论反映部分文件下载不了，安装之后报错，刚好我这个电脑上没有安装Basemap，我就重新安装一下下。我依然参照了<a href="https://blog.csdn.net/moxigandashu/article/details/68945845">神农尝百草&mdash;Windows环境下为Python3.X安装basemap</a>的文章内容，按照左后一种安装方法，再次对博主<a href="https://me.csdn.net/moxigandashu">moxigandashu</a>表示感谢。如果安装不成功，可以参照官方文档<a href="https://matplotlib.org/basemap/users/installing.html">Installing</a> ，谨记谨记，有问题，看文档，看官方文档，才是正解！网上大多数博客都属于东拼西凑，包括我这篇文章也是，限于我的能力，错误疏漏在所难免，所以在学习技术的时候，多看官方文档才是提高技术的根本之道！</p>
+<ol>
+<li>确定python版本</li>
+</ol>
+<p>我的版本是python 3.8.0 64位</p>
+<ol start="2">
+<li>
+<p>下载pyproj和basemap</p>
+<p>在<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">https://www.lfd.uci.edu/~gohlke/pythonlibs/</a> 下载</p>
+<p><a href="https://download.lfd.uci.edu/pythonlibs/q4hpdf1k/basemap-1.2.1-cp38-cp38-win_amd64.whl">basemap‑1.2.1‑cp38‑cp38‑win_amd64.whl</a>文件比较大，可能要多等几分钟。</p>
+<p><img src="pic%5Cbasemap21%5C01.png" alt="image-20200131172241275"></p>
+<p><a href="https://download.lfd.uci.edu/pythonlibs/q4hpdf1k/pyproj-2.4.2.post1-cp38-cp38-win_amd64.whl">pyproj‑2.4.2.post1‑cp38‑cp38‑win_amd64.whl</a></p>
+<p><img src="pic%5Cbasemap21%5C02.png" alt="image-20200131172722419"></p>
+<p>实测这些文件都是可以正常下载的。</p>
+</li>
+<li>
+<p>打开cmd，进入所下载的文件的目录</p>
+</li>
+<li>
+<p>安装pyproj和basemap</p>
+<p><code>pip install basemap‑1.2.1‑cp38‑cp38‑win_amd64.whl</code></p>
+<p><code>pip install pyproj‑2.4.2.post1‑cp38‑cp38‑win_amd64.whl </code></p>
+</li>
+<li>
+<p>测试安装结果
+<code>from mpl_toolkits.basemap import Basemap</code></p>
+</li>
+</ol>
+<p><img src="pic%5Cbasemap21%5C03.png" alt="image-20200131192701803"></p>
+<h2 id="0x03"><em><strong>0x03下面开始正式翻译</strong></em></h2>
+<p>原文地址可查看<a href="https://basemaptutorial.readthedocs.io/en/latest/basemap.html">basemaptutorial</a></p>
+<h3 id="basemap">Basemap</h3>
+<p>所有用Basemap库创建的地图，在创建之前都需要创建一个Basemap实例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mpl_toolkits<span style="color:#f92672">.</span>basemap<span style="color:#f92672">.</span>Basemap(llcrnrlon<span style="color:#f92672">=</span>None, llcrnrlat<span style="color:#f92672">=</span>None, urcrnrlon<span style="color:#f92672">=</span>None, urcrnrlat<span style="color:#f92672">=</span>None, llcrnrx<span style="color:#f92672">=</span>None, llcrnry<span style="color:#f92672">=</span>None, urcrnrx<span style="color:#f92672">=</span>None, urcrnry<span style="color:#f92672">=</span>None, width<span style="color:#f92672">=</span>None, height<span style="color:#f92672">=</span>None, projection<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">’</span>cyl<span style="color:#960050;background-color:#1e0010">’</span>, resolution<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">’</span>c<span style="color:#960050;background-color:#1e0010">’</span>, area_thresh<span style="color:#f92672">=</span>None, rsphere<span style="color:#f92672">=</span><span style="color:#ae81ff">6370997.0</span>, ellps<span style="color:#f92672">=</span>None, lat_ts<span style="color:#f92672">=</span>None, lat_1<span style="color:#f92672">=</span>None, lat_2<span style="color:#f92672">=</span>None, lat_0<span style="color:#f92672">=</span>None, lon_0<span style="color:#f92672">=</span>None, lon_1<span style="color:#f92672">=</span>None, lon_2<span style="color:#f92672">=</span>None, o_lon_p<span style="color:#f92672">=</span>None, o_lat_p<span style="color:#f92672">=</span>None, k_0<span style="color:#f92672">=</span>None, no_rot<span style="color:#f92672">=</span>False, suppress_ticks<span style="color:#f92672">=</span>True, satellite_height<span style="color:#f92672">=</span><span style="color:#ae81ff">35786000</span>, boundinglat<span style="color:#f92672">=</span>None, fix_aspect<span style="color:#f92672">=</span>True, anchor<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">’</span>C<span style="color:#960050;background-color:#1e0010">’</span>, celestial<span style="color:#f92672">=</span>False, round<span style="color:#f92672">=</span>False, epsg<span style="color:#f92672">=</span>None, ax<span style="color:#f92672">=</span>None)
+</code></pre></div><p>这个构造函数里面包含好多个可选的参数，它们的用法如下：</p>
+<ul>
+<li>resolution：海岸线、湖泊等的分辨率，可选的值包括c（crude，分辨率最低，默认的值）、l（low，低）、i（intermediate、中等）、h（high，高）、f（full，最高），或者None。
+<em>如果使用Shapefile替代默认的地图文件，那么最好把这个参数的值设置为None，这样减少不必要的数据加载，提高运行效率。</em></li>
+<li>area_thresh：和上面分辨率相关的临界值，10000，1000，100，10，1分别对应c，l，i，h，f。</li>
+<li>rsphere：指定地图投影中的半径，默认的是6370997</li>
+<li>ellps：参考坐标系的名称，例如’WGS84‘，这些值在pyproj.pj_ellps中定义。</li>
+<li>suppress_ticks：不在地图坐标轴上显示刻度和标签。</li>
+<li>fix_aspect：修正方向斜率，默认为true。</li>
+<li>anchor：锚点，指定地图的位置，默认为C，居中。可选的值包括：C、SW、S、SE、E、NE、N、NW和W。</li>
+<li>celestial：按天文学的惯例使用经度，例如负的经度表示0度以东。默认False，意味着resolution=None。</li>
+<li>ax：设置默认的坐标轴。</li>
+</ul>
+<h3 id="passing-the-bounding-box">Passing the bounding box</h3>
+<p>下面的参数用来设定地图的范围。
+第一种方法是通过设置地理坐标经纬度来设置地图的范围：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>llcrnrlon</td>
+<td>左下角的经度</td>
+</tr>
+<tr>
+<td>llcrnrlat</td>
+<td>左下角的纬度</td>
+</tr>
+<tr>
+<td>urcrnrlon</td>
+<td>右上角的经度</td>
+</tr>
+<tr>
+<td>urcrnrlat</td>
+<td>右上角的纬度</td>
+</tr>
+</tbody>
+</table>
+<p>第二种方法是用投影单位来设置：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lcrnrx</td>
+<td>左下角的x轴坐标</td>
+</tr>
+<tr>
+<td>llcrnry</td>
+<td>左下角的y轴坐标</td>
+</tr>
+<tr>
+<td>urcrnrx</td>
+<td>右上角的x轴坐标</td>
+</tr>
+<tr>
+<td>urcrnry</td>
+<td>右上角的y轴坐标</td>
+</tr>
+</tbody>
+</table>
+<p>第三种方法是综合经纬度和投影单位设置：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>高度</td>
+</tr>
+<tr>
+<td>lon_0</td>
+<td>地图中心的经度</td>
+</tr>
+<tr>
+<td>lat_0</td>
+<td>地图中心的纬度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="basemap-1">利用Basemap进行坐标转换</h3>
+<p>可以用Basemap计算地图上的点，并且进行坐标值和经纬度的转换。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> mpl_toolkits.basemap <span style="color:#f92672">import</span> Basemap
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+
+map <span style="color:#f92672">=</span> Basemap(projection<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">aeqd</span><span style="color:#e6db74">&#39;</span>, lon_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, lat_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>)
+
+<span style="color:#66d9ef">print</span> (map(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">50</span>))
+<span style="color:#75715e"># print (map(10, 50, inverse=False))</span>
+<span style="color:#66d9ef">print</span> (map(<span style="color:#ae81ff">20015077.3712</span>, <span style="color:#ae81ff">20015077.3712</span>, inverse<span style="color:#f92672">=</span>True))
+</code></pre></div><p>输出的结果如下所示：</p>
+<p><img src="pic%5Cbasemap21%5C04.png" alt="image-20200131213857599"></p>
+<p><em>inverse参数可以不写，这时候默认是inverse=False，表示把坐标值转换为经纬度，反之，则是把经纬度转换成坐标值</em></p>
+
+          </div>
+
+    </article>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+            <ul class="pager">
+             
+              
+                <li><a class="previous" href="https://birdflyiot.github.io/posts/markdownv%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">Markdownv常用语法 &raquo;</a></li>
+              
+            </ul>
+    </div>
+</div>
+
+
+<div class="col-md-4 mt20">
+        <div class="post-img">
+           
+            <img width="600" src="https://birdflyiot.github.io/images/image-0.png" alt="webjeda">
+            
+        </div>
+            
+        
+        <div class="mt10 recent">
+            <h2>Recent articles</h2>        
+             <ul>
+                
+
+                      <li>
+                      <p><a href="https://birdflyiot.github.io/posts/basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0%E8%BF%9B%E9%98%B6%E4%B8%80%E5%AD%A6%E4%B9%A0%E7%BB%98%E5%88%B6%E7%96%AB%E8%AF%B7%E5%9C%B0%E5%9B%BE/">Basemap手册——第二章进阶（一）学习绘制疫请地图</a><small>&nbsp;&nbsp;February 1, 2020</small></p>
+                      </li>
+
+                
+
+                      <li>
+                      <p><a href="https://birdflyiot.github.io/posts/markdownv%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">Markdownv常用语法</a><small>&nbsp;&nbsp;January 10, 2020</small></p>
+                      </li>
+
+                
+              </ul>
+        </div>
+        
+        <br>
+
+</div>
+
+</div>
+
+
+
+
+      </div>
+    </div>
+
+    <footer>
+    <div class="container">
+        <div class="row p20">
+            
+                <div class="col-md-4 text-center mt25">All rights reserved by <a target="_blank" href="https://blog.csdn.net/pengranxindong">birdfly</a></div>
+            
+
+            <div class="col-md-4 text-center mt25" >
+                
+                <a target="_blank" href="https://bool.netlify.com"><img src="https://img.shields.io/badge/Built%20by-bool-brightgreen.svg" alt="birdfly"></a>
+                
+            </div>
+            <div class="col-md-4 text-center mt25">
+               
+               
+               
+               
+                <a target="_blank" href="http://github.com/birdflyiot"><li class="social github"><i class="fa fa-github-square"></i></li></a>
+                
+               
+                <a target="_blank" href="mailto:1018809061@qq.com"><li class="social email"><i class="fa fa-envelope"></i></li></a>
+                
+            </div>
+
+        </div> 
+    </div>
+</footer>
+    
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://birdflyiot.github.io//js/bootstrap.min.js"></script>
+  
+  </body>
+
+</html>
