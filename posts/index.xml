@@ -6,10 +6,20 @@
     <description>Recent content in Posts on 飞鸟物联·智享云端</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Feb 2020 09:04:35 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 02 Feb 2020 10:28:32 +0800</lastBuildDate>
     
 	<atom:link href="https://birdflyiot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【译】Basemap手册  第二章 进阶（二）</title>
+      <link>https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/</link>
+      <pubDate>Sun, 02 Feb 2020 10:28:32 +0800</pubDate>
+      
+      <guid>https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/</guid>
+      <description>绘制数据 添加注释 用带箭头的文本给地图上的点添加注释。用不带箭头的文本添加注释的方法，参见 text annotate(*args, **kwargs)
+ 这个方法不属于Basemap，而是属于matplotlib，所以只能和plot、axis一起使用。 第一个参数是文本的内容。 xy是包含x、y轴坐标的列表，这个坐标点就是箭头指向的点。 xycoords 指定xy使用的坐标类型：  data表示坐标使用的data（投影坐标） offset points表示points的偏移量 axes pixels 表示坐标左下角的像素点 其他参数参见annotation docs   xytext 文本标签的位置，在箭头的起点 textcoords 指定坐标类型，和xycoords一样 arrowprops 设置箭头属性，参见Line2D  color 文本的颜色，参见This page explains all the color options  标记处武汉 from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=110)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;)map.drawcoastlines()x, y = map(114, 30) # 经纬度坐标 东经114°，北纬30° x2, y2 = (80, -20)plt.</description>
+    </item>
     
     <item>
       <title>Basemap手册——第二章进阶（一）学习绘制疫情地图</title>
@@ -59,16 +69,6 @@ mpl_toolkits.basemap.Basemap(llcrnrlon=None, llcrnrlat=None, urcrnrlon=None, urc
   接着一个方括号，里面放上替代文字
   接着一个小括号，里面放上网址，还可以加一对引号，里面放属性文字
   </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/</guid>
-      <description>绘制数据 添加注释 用带箭头的文本给地图上的点添加注释。用不带箭头的文本添加注释的方法，参见 text annotate(*args, **kwargs)
- 这个方法不属于Basemap，而是属于matplotlib，所以只能和plot、axis一起使用。 第一个参数是文本的内容。 xy是包含x、y轴坐标的列表，这个坐标点就是箭头指向的点。 xycoords 指定xy使用的坐标类型：  data表示坐标使用的data（投影坐标） offset points表示points的偏移量 axes pixels 表示坐标左下角的像素点 其他参数参见annotation docs   xytext 文本标签的位置，在箭头的起点 textcoords 指定坐标类型，和xycoords一样 arrowprops 设置箭头属性，参见Line2D  color 文本的颜色，参见This page explains all the color options  标记处武汉 from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=110)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;)map.drawcoastlines()x, y = map(114, 30) # 经纬度坐标 东经114°，北纬30° x2, y2 = (80, -20)plt.</description>
     </item>
     
   </channel>
