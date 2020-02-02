@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> - 飞鸟物联·智享云端</title>
+<meta name="description" content="绘制数据 添加注释 用带箭头的文本给地图上的点添加注释。用不带箭头的文本添加注释的方法，参见 text annotate(*args, **kwargs)
+ 这个方法不属于Basemap，而是属于matplotlib，所以只能和plot、axis一起使用。 第一个参数是文本的内容。 xy是包含x、y轴坐标的列表，这个坐标点就是箭头指向的点。 xycoords 指定xy使用的坐标类型：  data表示坐标使用的data（投影坐标） offset points表示points的偏移量 axes pixels 表示坐标左下角的像素点 其他参数参见annotation docs   xytext 文本标签的位置，在箭头的起点 textcoords 指定坐标类型，和xycoords一样 arrowprops 设置箭头属性，参见Line2D  color 文本的颜色，参见This page explains all the color options  标记处武汉 from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=110)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;)map.drawcoastlines()x, y = map(114, 30) # 经纬度坐标 东经114°，北纬30° x2, y2 = (80, -20)plt."/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="绘制数据 添加注释 用带箭头的文本给地图上的点添加注释。用不带箭头的文本添加注释的方法，参见 text annotate(*args, **kwargs)
+ 这个方法不属于Basemap，而是属于matplotlib，所以只能和plot、axis一起使用。 第一个参数是文本的内容。 xy是包含x、y轴坐标的列表，这个坐标点就是箭头指向的点。 xycoords 指定xy使用的坐标类型：  data表示坐标使用的data（投影坐标） offset points表示points的偏移量 axes pixels 表示坐标左下角的像素点 其他参数参见annotation docs   xytext 文本标签的位置，在箭头的起点 textcoords 指定坐标类型，和xycoords一样 arrowprops 设置箭头属性，参见Line2D  color 文本的颜色，参见This page explains all the color options  标记处武汉 from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=110)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;)map.drawcoastlines()x, y = map(114, 30) # 经纬度坐标 东经114°，北纬30° x2, y2 = (80, -20)plt." />
+<meta name="twitter:title" content=" - 飞鸟物联·智享云端" />
+<meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="" />
+
+
+<meta property="og:type" content="article" />
+<meta content=" - 飞鸟物联·智享云端" property="og:title">
+<meta content="绘制数据 添加注释 用带箭头的文本给地图上的点添加注释。用不带箭头的文本添加注释的方法，参见 text annotate(*args, **kwargs)
+ 这个方法不属于Basemap，而是属于matplotlib，所以只能和plot、axis一起使用。 第一个参数是文本的内容。 xy是包含x、y轴坐标的列表，这个坐标点就是箭头指向的点。 xycoords 指定xy使用的坐标类型：  data表示坐标使用的data（投影坐标） offset points表示points的偏移量 axes pixels 表示坐标左下角的像素点 其他参数参见annotation docs   xytext 文本标签的位置，在箭头的起点 textcoords 指定坐标类型，和xycoords一样 arrowprops 设置箭头属性，参见Line2D  color 文本的颜色，参见This page explains all the color options  标记处武汉 from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=110)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;)map.drawcoastlines()x, y = map(114, 30) # 经纬度坐标 东经114°，北纬30° x2, y2 = (80, -20)plt." property="og:description">
+<meta property="og:url" content="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/" />
+<meta property="og:site_name" content="飞鸟物联·智享云端" />
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{ 
+    "@context": "http://schema.org", 
+    "@type": "BlogPosting",
+    "headline": "",
+    "genre": "",  
+    "url": "https:\/\/birdflyiot.github.io\/posts\/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C\/",
+    "datePublished": "0001-01-01 00:00:00 \x2b0000 UTC",
+    "description": "绘制数据 添加注释 用带箭头的文本给地图上的点添加注释。用不带箭头的文本添加注释的方法，参见 text annotate(*args, **kwargs)\n 这个方法不属于Basemap，而是属于matplotlib，所以只能和plot、axis一起使用。 第一个参数是文本的内容。 xy是包含x、y轴坐标的列表，这个坐标点就是箭头指向的点。 xycoords 指定xy使用的坐标类型：  data表示坐标使用的data（投影坐标） offset points表示points的偏移量 axes pixels 表示坐标左下角的像素点 其他参数参见annotation docs   xytext 文本标签的位置，在箭头的起点 textcoords 指定坐标类型，和xycoords一样 arrowprops 设置箭头属性，参见Line2D  color 文本的颜色，参见This page explains all the color options  标记处武汉 from mpl_toolkits.basemap import Basemap\rimport matplotlib.pyplot as plt\rmap = Basemap(projection=\x26#39;ortho\x26#39;, lat_0=30, lon_0=110)\rmap.drawmapboundary(fill_color=\x26#39;aqua\x26#39;)\rmap.fillcontinents(color=\x26#39;coral\x26#39;,lake_color=\x26#39;aqua\x26#39;)\rmap.drawcoastlines()\rx, y = map(114, 30) # 经纬度坐标 东经114°，北纬30°\r x2, y2 = (80, -20)\rplt.",
+    "author": {
+        "@type": "Person",
+        "name": ""
+    }
+ }
+</script>
+
+
+
+
+<link rel="stylesheet" href="/sass/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://birdflyiot.github.io/">飞鸟物联·智享云端</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://birdflyiot.github.io/pages/about/">About</a></li>
+        <li><a href="https://birdflyiot.github.io/pages/contact/">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Download <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a target="_blank" href="https://github.com/bul-ikana/hugo-cards">Project</a></li>
+            <li><a href="https://github.com/bul-ikana/hugo-cards.git">Download</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a target="_blank" href="https://themes.gohugo.io/">More Themes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+    <div class="container">
+      <div class="wrapper">
+        
+<div class="row">
+<div class="col-md-8">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+          <header class="post-header">
+            <h1 class="post-title" itemprop="name headline"></h1>
+            <p class="post-meta"><time datetime='0001-01-01T00:00:00Z' itemprop="datePublished">January 1, 0001</time></p>
+                 
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <h1 id="httpsbasemaptutorialreadthedocsioenlatestplotting-datahtmlplotting-data"><a href="https://basemaptutorial.readthedocs.io/en/latest/plotting_data.html#plotting-data">绘制数据</a></h1>
+<h2 id="heading">添加注释</h2>
+<p>用带箭头的文本给地图上的点添加注释。用不带箭头的文本添加注释的方法，参见 <a href="https://basemaptutorial.readthedocs.io/en/latest/plotting_data.html#text">text</a>
+<code>annotate(*args, **kwargs)</code></p>
+<ul>
+<li>这个方法不属于Basemap，而是属于matplotlib，所以只能和plot、axis一起使用。</li>
+<li>第一个参数是文本的内容。</li>
+<li>xy是包含x、y轴坐标的列表，这个坐标点就是箭头指向的点。</li>
+<li>xycoords 指定xy使用的坐标类型：
+<ul>
+<li>data表示坐标使用的data（投影坐标）</li>
+<li>offset points表示points的偏移量</li>
+<li>axes pixels 表示坐标左下角的像素点</li>
+<li>其他参数参见<a href="http://matplotlib.org/api/text_api.html#matplotlib.text.Annotation">annotation docs</a></li>
+</ul>
+</li>
+<li>xytext 文本标签的位置，在箭头的起点</li>
+<li>textcoords 指定坐标类型，和xycoords一样</li>
+<li>arrowprops 设置箭头属性，参见<a href="https://basemaptutorial.readthedocs.io/en/latest/matplotlib.org/api/lines_api.html#matplotlib.lines.Line2D">Line2D </a></li>
+<li>color 文本的颜色，参见<a href="http://matplotlib.org/api/colors_api.html">This page explains all the color options</a></li>
+</ul>
+<h2 id="heading-1">标记处武汉</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> mpl_toolkits.basemap <span style="color:#f92672">import</span> Basemap
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+
+
+map <span style="color:#f92672">=</span> Basemap(projection<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ortho</span><span style="color:#e6db74">&#39;</span>, 
+              lat_0<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>, lon_0<span style="color:#f92672">=</span><span style="color:#ae81ff">110</span>)
+
+map<span style="color:#f92672">.</span>drawmapboundary(fill_color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">aqua</span><span style="color:#e6db74">&#39;</span>)
+map<span style="color:#f92672">.</span>fillcontinents(color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">coral</span><span style="color:#e6db74">&#39;</span>,lake_color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">aqua</span><span style="color:#e6db74">&#39;</span>)
+map<span style="color:#f92672">.</span>drawcoastlines()
+
+
+x, y <span style="color:#f92672">=</span> map(<span style="color:#ae81ff">114</span>, <span style="color:#ae81ff">30</span>) <span style="color:#75715e"># 经纬度坐标 东经114°，北纬30°</span>
+x2, y2 <span style="color:#f92672">=</span> (<span style="color:#ae81ff">80</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>)
+
+plt<span style="color:#f92672">.</span>annotate(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Wuhan</span><span style="color:#e6db74">&#39;</span>, xy<span style="color:#f92672">=</span>(x, y),  xycoords<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data</span><span style="color:#e6db74">&#39;</span>,
+                xytext<span style="color:#f92672">=</span>(x2, y2), textcoords<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">offset points</span><span style="color:#e6db74">&#39;</span>,
+                color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;</span>,
+                arrowprops<span style="color:#f92672">=</span>dict(arrowstyle<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">fancy</span><span style="color:#e6db74">&#34;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">g</span><span style="color:#e6db74">&#39;</span>)
+                )
+
+x2, y2 <span style="color:#f92672">=</span> map(<span style="color:#ae81ff">80</span>, <span style="color:#ae81ff">30</span>)
+plt<span style="color:#f92672">.</span>annotate(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Wuhan</span><span style="color:#e6db74">&#39;</span>, xy<span style="color:#f92672">=</span>(x, y),  xycoords<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data</span><span style="color:#e6db74">&#39;</span>,
+                xytext<span style="color:#f92672">=</span>(x2, y2), textcoords<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data</span><span style="color:#e6db74">&#39;</span>,
+                arrowprops<span style="color:#f92672">=</span>dict(arrowstyle<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-&gt;</span><span style="color:#e6db74">&#34;</span>)
+                )
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p>效果如下：</p>
+<p><img src="/20201.png" alt="image-20200201105228203"></p>
+<h1 id="barbshttpsbasemaptutorialreadthedocsioenlatestplotting-datahtmlbarbs"><a href="https://basemaptutorial.readthedocs.io/en/latest/plotting_data.html#barbs">barbs</a></h1>
+<p>在地图上绘制风向</p>
+<p>barbs(x, y, u, v, *args, **kwargs)</p>
+<p>这个暂时不太常用，具体用法参见<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.barbs">The barbs docs from the matplotlib documentation</a>。</p>
+<h1 id="contourhttpsbasemaptutorialreadthedocsioenlatestplotting-datahtmlcontour"><a href="https://basemaptutorial.readthedocs.io/en/latest/plotting_data.html#contour">contour</a></h1>
+<p>绘制等高线</p>
+<p><code>contour(x, y, data)</code></p>
+<ul>
+<li>x和y是矩阵数据</li>
+<li>data是包含点的坐标的矩阵</li>
+<li>还可以传递第四个参数，这个参数的值是关于等高线等级的列表</li>
+<li>默认的colormap是jet，但是可以修改为cmap</li>
+<li>tri=True可以假定栅格为非结构化的</li>
+</ul>
+<h2 id="heading-2">示例代码</h2>
+<pre><code class="language-from" data-lang="from">import matplotlib.pyplot as plt
+from osgeo import gdal
+from numpy import linspace
+from numpy import meshgrid
+
+map = Basemap(projection='tmerc', 
+              lat_0=0, lon_0=3,
+              llcrnrlon=1.819757266426611, 
+              llcrnrlat=41.583851612359275, 
+              urcrnrlon=1.841589961763497, 
+              urcrnrlat=41.598674173123)
+
+ds = gdal.Open(&quot;dem.tiff&quot;)
+data = ds.ReadAsArray()
+
+x = linspace(0, map.urcrnrx, data.shape[1])
+y = linspace(0, map.urcrnry, data.shape[0])
+
+xx, yy = meshgrid(x, y)
+
+map.contour(xx, yy, data)
+
+plt.show()
+</code></pre><p>如果运行不成功，可能出现的错误有两点：</p>
+<ol>
+<li>没有gdal库
+gdal库的下载方法同前面讲的，在<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">这里</a>找到</li>
+</ol>
+<p><img src="/20202.png" alt="image-20200201124219273"></p>
+<ol start="2">
+<li>没有dem.tiff文件</li>
+</ol>
+<p>可以在这里下载</p>
+<h1 id="contourf">contourf</h1>
+<p>绘制着色的等高线图</p>
+<p><em>这些在上一张中也有介绍，详情可以参考文档<a href="https://basemaptutorial.readthedocs.io/en/latest/plotting_data.html#contourf">contourf</a></em></p>
+
+          </div>
+
+    </article>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+            <ul class="pager">
+             
+                    <li><a class="next" href="https://birdflyiot.github.io/pages/about/">&laquo; About</a></li>
+              
+              
+            </ul>
+    </div>
+</div>
+
+
+<div class="col-md-4 mt20">
+        <div class="post-img">
+           
+            <img width="600" src="https://birdflyiot.github.io/images/image-0.png" alt="webjeda">
+            
+        </div>
+            
+        
+        <div class="mt10 recent">
+            <h2>Recent articles</h2>        
+             <ul>
+                
+
+                      <li>
+                      <p><a href="https://birdflyiot.github.io/posts/basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0%E8%BF%9B%E9%98%B6%E4%B8%80%E5%AD%A6%E4%B9%A0%E7%BB%98%E5%88%B6%E7%96%AB%E8%AF%B7%E5%9C%B0%E5%9B%BE/">Basemap手册——第二章进阶（一）学习绘制疫情地图</a><small>&nbsp;&nbsp;February 1, 2020</small></p>
+                      </li>
+
+                
+
+                      <li>
+                      <p><a href="https://birdflyiot.github.io/posts/markdownv%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">Markdownv常用语法</a><small>&nbsp;&nbsp;January 10, 2020</small></p>
+                      </li>
+
+                
+
+                      <li>
+                      <p><a href="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/"></a><small>&nbsp;&nbsp;January 1, 0001</small></p>
+                      </li>
+
+                
+              </ul>
+        </div>
+        
+        <br>
+
+</div>
+
+</div>
+
+
+
+
+      </div>
+    </div>
+
+    <footer>
+    <div class="container">
+        <div class="row p20">
+            
+                <div class="col-md-4 text-center mt25">All rights reserved by <a target="_blank" href="https://blog.csdn.net/pengranxindong">birdfly</a></div>
+            
+
+            <div class="col-md-4 text-center mt25" >
+                
+                <a target="_blank" href="https://bool.netlify.com"><img src="https://img.shields.io/badge/Built%20by-bool-brightgreen.svg" alt="birdfly"></a>
+                
+            </div>
+            <div class="col-md-4 text-center mt25">
+               
+               
+               
+               
+                <a target="_blank" href="http://github.com/birdflyiot"><li class="social github"><i class="fa fa-github-square"></i></li></a>
+                
+               
+                <a target="_blank" href="mailto:1018809061@qq.com"><li class="social email"><i class="fa fa-envelope"></i></li></a>
+                
+            </div>
+
+        </div> 
+    </div>
+</footer>
+    
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://birdflyiot.github.io//js/bootstrap.min.js"></script>
+  
+  </body>
+
+</html>
