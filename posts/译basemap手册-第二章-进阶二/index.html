@@ -10,7 +10,7 @@
 <meta name="description" content="绘制数据 添加注释 用带箭头的文本给地图上的点添加注释。用不带箭头的文本添加注释的方法，参见 text annotate(*args, **kwargs)
  这个方法不属于Basemap，而是属于matplotlib，所以只能和plot、axis一起使用。 第一个参数是文本的内容。 xy是包含x、y轴坐标的列表，这个坐标点就是箭头指向的点。 xycoords 指定xy使用的坐标类型：  data表示坐标使用的data（投影坐标） offset points表示points的偏移量 axes pixels 表示坐标左下角的像素点 其他参数参见annotation docs   xytext 文本标签的位置，在箭头的起点 textcoords 指定坐标类型，和xycoords一样 arrowprops 设置箭头属性，参见Line2D  color 文本的颜色，参见This page explains all the color options  标记处武汉 from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=110)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;)map.drawcoastlines()x, y = map(114, 30) # 经纬度坐标 东经114°，北纬30° x2, y2 = (80, -20)plt."/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/" />
+<link rel="canonical" href="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/" />
 
 
 <meta name="twitter:card" content="summary" />
@@ -25,7 +25,7 @@
 <meta content="【译】Basemap手册  第二章 进阶（二） - 飞鸟物联·智享云端" property="og:title">
 <meta content="绘制数据 添加注释 用带箭头的文本给地图上的点添加注释。用不带箭头的文本添加注释的方法，参见 text annotate(*args, **kwargs)
  这个方法不属于Basemap，而是属于matplotlib，所以只能和plot、axis一起使用。 第一个参数是文本的内容。 xy是包含x、y轴坐标的列表，这个坐标点就是箭头指向的点。 xycoords 指定xy使用的坐标类型：  data表示坐标使用的data（投影坐标） offset points表示points的偏移量 axes pixels 表示坐标左下角的像素点 其他参数参见annotation docs   xytext 文本标签的位置，在箭头的起点 textcoords 指定坐标类型，和xycoords一样 arrowprops 设置箭头属性，参见Line2D  color 文本的颜色，参见This page explains all the color options  标记处武汉 from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=110)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;)map.drawcoastlines()x, y = map(114, 30) # 经纬度坐标 东经114°，北纬30° x2, y2 = (80, -20)plt." property="og:description">
-<meta property="og:url" content="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/" />
+<meta property="og:url" content="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/" />
 <meta property="og:site_name" content="飞鸟物联·智享云端" />
 
 <meta property="article:published_time" content="2020-02-02 10:28:32 &#43;0800 CST" />
@@ -40,7 +40,7 @@
     "@type": "BlogPosting",
     "headline": "【译】Basemap手册  第二章 进阶（二）",
     "genre": "",  
-    "url": "https:\/\/birdflyiot.github.io\/posts\/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C\/",
+    "url": "https:\/\/birdflyiot.github.io\/posts\/%E8%AF%91basemap%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C\/",
     "datePublished": "2020-02-02 10:28:32 \x2b0800 CST",
     "description": "绘制数据 添加注释 用带箭头的文本给地图上的点添加注释。用不带箭头的文本添加注释的方法，参见 text annotate(*args, **kwargs)\n 这个方法不属于Basemap，而是属于matplotlib，所以只能和plot、axis一起使用。 第一个参数是文本的内容。 xy是包含x、y轴坐标的列表，这个坐标点就是箭头指向的点。 xycoords 指定xy使用的坐标类型：  data表示坐标使用的data（投影坐标） offset points表示points的偏移量 axes pixels 表示坐标左下角的像素点 其他参数参见annotation docs   xytext 文本标签的位置，在箭头的起点 textcoords 指定坐标类型，和xycoords一样 arrowprops 设置箭头属性，参见Line2D  color 文本的颜色，参见This page explains all the color options  标记处武汉 from mpl_toolkits.basemap import Basemap\rimport matplotlib.pyplot as plt\rmap = Basemap(projection=\x26#39;ortho\x26#39;, lat_0=30, lon_0=110)\rmap.drawmapboundary(fill_color=\x26#39;aqua\x26#39;)\rmap.fillcontinents(color=\x26#39;coral\x26#39;,lake_color=\x26#39;aqua\x26#39;)\rmap.drawcoastlines()\rx, y = map(114, 30) # 经纬度坐标 东经114°，北纬30°\r x2, y2 = (80, -20)\rplt.",
     "author": {
@@ -159,7 +159,7 @@ plt<span style="color:#f92672">.</span>annotate(<span style="color:#e6db74"></sp
                 )
 plt<span style="color:#f92672">.</span>show()
 </code></pre></div><p>效果如下：</p>
-<p><img src="/20201.png" alt="image-20200201105228203"></p>
+<p><img src="pic/basemap22/20201.png" alt="image-20200201105228203"></p>
 <h1 id="barbshttpsbasemaptutorialreadthedocsioenlatestplotting-datahtmlbarbs"><a href="https://basemaptutorial.readthedocs.io/en/latest/plotting_data.html#barbs">barbs</a></h1>
 <p>在地图上绘制风向</p>
 <p>barbs(x, y, u, v, *args, **kwargs)</p>
@@ -203,7 +203,7 @@ plt.show()
 <li>没有gdal库
 gdal库的下载方法同前面讲的，在<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">这里</a>找到</li>
 </ol>
-<p><img src="/20202.png" alt="image-20200201124219273"></p>
+<p><img src="pic/basemap22/20202.png" alt="image-20200201124219273"></p>
 <ol start="2">
 <li>没有dem.tiff文件</li>
 </ol>
@@ -244,7 +244,7 @@ gdal库的下载方法同前面讲的，在<a href="https://www.lfd.uci.edu/~goh
                 
 
                       <li>
-                      <p><a href="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/">【译】Basemap手册  第二章 进阶（二）</a><small>&nbsp;&nbsp;February 2, 2020</small></p>
+                      <p><a href="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/">【译】Basemap手册  第二章 进阶（二）</a><small>&nbsp;&nbsp;February 2, 2020</small></p>
                       </li>
 
                 
