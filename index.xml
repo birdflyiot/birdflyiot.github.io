@@ -6,10 +6,29 @@
     <description>Recent content on 飞鸟物联·智享云端</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2020 10:28:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2020 17:10:45 +0800</lastBuildDate>
     
 	<atom:link href="https://birdflyiot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【译】Basemap手册——第二章（三） 进阶</title>
+      <link>https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%B8%89/</link>
+      <pubDate>Tue, 04 Feb 2020 17:10:45 +0800</pubDate>
+      
+      <guid>https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%B8%89/</guid>
+      <description>这几个函数在第一章中都使用过，这里再稍微详细说一下
+plot 在地图上绘制标记和线条，该函数有如下参数：
+plot(x, y, *args, **kwargs)
+  x 和y可以是浮点型数据投影单位表示的位置（画标记），也可以是点的列表（画线段）
+  如果关键字latlon设置为True，x和y会被转换成经纬度，但是在老版本中不起作用。
+  默认的标记是点
+  默认的颜色是黑色
+  下面的例子绘制一个点：
+import matplotlib.pyplot as plt map = Basemap(projection=&#39;ortho&#39;, lat_0=30, lon_0=112) map.drawmapboundary(fill_color=&#39;aqua&#39;) map.fillcontinents(color=&#39;coral&#39;,lake_color=&#39;aqua&#39;) map.drawcoastlines() x, y = map(112, 30) # x是经度，y是纬度 map.plot(x, y, marker=&#39;D&#39;,color=&#39;m&#39;) plt.show() 效果如下：
+如果参数是数组列表，markers=None，那么绘制的是线段：
+from mpl_toolkits.basemap import Basemap import matplotlib.pyplot as plt map = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=120) map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;) map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;) map.drawcoastlines() lons = [169.6, 139, 144,134] lats = [64, 35, 13, 7] x, y = map(lons, lats) map.</description>
+    </item>
     
     <item>
       <title>【译】Basemap手册  第二章 进阶（二）</title>
@@ -88,26 +107,6 @@ mpl_toolkits.basemap.Basemap(llcrnrlon=None, llcrnrlat=None, urcrnrlon=None, urc
       
       <guid>https://birdflyiot.github.io/pages/about/</guid>
       <description>自己的一个网上小窝 写写编程心得 记录开发实践 希望能在若干年后 回忆起那些代码 能欣慰地说 我的一生没有因为碌碌无为而羞愧 也没有因为虚度年华而悔恨 我把最美的方法献给了自己 最热爱的事业 </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%B8%89/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%B8%89/</guid>
-      <description>title: &amp;ldquo;【译】Basemap手册——第二章 进阶（三）&amp;rdquo; date: 2020-02-04T17:01:01+08:00 draft: true
- 这几个函数在第一章中都使用过，这里再稍微详细说一下
-plot 在地图上绘制标记和线条，该函数有如下参数：
-plot(x, y, *args, **kwargs)
-  x 和y可以是浮点型数据投影单位表示的位置（画标记），也可以是点的列表（画线段）
-  如果关键字latlon设置为True，x和y会被转换成经纬度，但是在老版本中不起作用。
-  默认的标记是点
-  默认的颜色是黑色
-  下面的例子绘制一个点：
-import matplotlib.pyplot as pltmap = Basemap(projection=&#39;ortho&#39;, lat_0=30, lon_0=112)map.drawmapboundary(fill_color=&#39;aqua&#39;)map.fillcontinents(color=&#39;coral&#39;,lake_color=&#39;aqua&#39;)map.drawcoastlines()x, y = map(112, 30) # x是经度，y是纬度map.plot(x, y, marker=&#39;D&#39;,color=&#39;m&#39;)plt.show()效果如下：
-如果参数是数组列表，markers=None，那么绘制的是线段：
-from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=120)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map.</description>
     </item>
     
   </channel>

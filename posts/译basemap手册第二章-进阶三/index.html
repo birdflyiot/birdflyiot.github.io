@@ -6,9 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title> - 飞鸟物联·智享云端</title>
-<meta name="description" content="title: &amp;ldquo;【译】Basemap手册——第二章 进阶（三）&amp;rdquo; date: 2020-02-04T17:01:01&#43;08:00 draft: true
- 这几个函数在第一章中都使用过，这里再稍微详细说一下
+<title>【译】Basemap手册——第二章（三） 进阶 - 飞鸟物联·智享云端</title>
+<meta name="description" content="这几个函数在第一章中都使用过，这里再稍微详细说一下
 plot 在地图上绘制标记和线条，该函数有如下参数：
 plot(x, y, *args, **kwargs)
   x 和y可以是浮点型数据投影单位表示的位置（画标记），也可以是点的列表（画线段）
@@ -16,16 +15,15 @@ plot(x, y, *args, **kwargs)
   默认的标记是点
   默认的颜色是黑色
   下面的例子绘制一个点：
-import matplotlib.pyplot as pltmap = Basemap(projection=&#39;ortho&#39;, lat_0=30, lon_0=112)map.drawmapboundary(fill_color=&#39;aqua&#39;)map.fillcontinents(color=&#39;coral&#39;,lake_color=&#39;aqua&#39;)map.drawcoastlines()x, y = map(112, 30) # x是经度，y是纬度map.plot(x, y, marker=&#39;D&#39;,color=&#39;m&#39;)plt.show()效果如下：
+import matplotlib.pyplot as plt map = Basemap(projection=&#39;ortho&#39;, lat_0=30, lon_0=112) map.drawmapboundary(fill_color=&#39;aqua&#39;) map.fillcontinents(color=&#39;coral&#39;,lake_color=&#39;aqua&#39;) map.drawcoastlines() x, y = map(112, 30) # x是经度，y是纬度 map.plot(x, y, marker=&#39;D&#39;,color=&#39;m&#39;) plt.show() 效果如下：
 如果参数是数组列表，markers=None，那么绘制的是线段：
-from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=120)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map."/>
+from mpl_toolkits.basemap import Basemap import matplotlib.pyplot as plt map = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=120) map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;) map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;) map.drawcoastlines() lons = [169.6, 139, 144,134] lats = [64, 35, 13, 7] x, y = map(lons, lats) map."/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%B8%89/" />
 
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:description" content="title: &amp;ldquo;【译】Basemap手册——第二章 进阶（三）&amp;rdquo; date: 2020-02-04T17:01:01&#43;08:00 draft: true
- 这几个函数在第一章中都使用过，这里再稍微详细说一下
+<meta name="twitter:description" content="这几个函数在第一章中都使用过，这里再稍微详细说一下
 plot 在地图上绘制标记和线条，该函数有如下参数：
 plot(x, y, *args, **kwargs)
   x 和y可以是浮点型数据投影单位表示的位置（画标记），也可以是点的列表（画线段）
@@ -33,18 +31,17 @@ plot(x, y, *args, **kwargs)
   默认的标记是点
   默认的颜色是黑色
   下面的例子绘制一个点：
-import matplotlib.pyplot as pltmap = Basemap(projection=&#39;ortho&#39;, lat_0=30, lon_0=112)map.drawmapboundary(fill_color=&#39;aqua&#39;)map.fillcontinents(color=&#39;coral&#39;,lake_color=&#39;aqua&#39;)map.drawcoastlines()x, y = map(112, 30) # x是经度，y是纬度map.plot(x, y, marker=&#39;D&#39;,color=&#39;m&#39;)plt.show()效果如下：
+import matplotlib.pyplot as plt map = Basemap(projection=&#39;ortho&#39;, lat_0=30, lon_0=112) map.drawmapboundary(fill_color=&#39;aqua&#39;) map.fillcontinents(color=&#39;coral&#39;,lake_color=&#39;aqua&#39;) map.drawcoastlines() x, y = map(112, 30) # x是经度，y是纬度 map.plot(x, y, marker=&#39;D&#39;,color=&#39;m&#39;) plt.show() 效果如下：
 如果参数是数组列表，markers=None，那么绘制的是线段：
-from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=120)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map." />
-<meta name="twitter:title" content=" - 飞鸟物联·智享云端" />
+from mpl_toolkits.basemap import Basemap import matplotlib.pyplot as plt map = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=120) map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;) map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;) map.drawcoastlines() lons = [169.6, 139, 144,134] lats = [64, 35, 13, 7] x, y = map(lons, lats) map." />
+<meta name="twitter:title" content="【译】Basemap手册——第二章（三） 进阶 - 飞鸟物联·智享云端" />
 <meta name="twitter:site" content="" />
 <meta name="twitter:creator" content="" />
 
 
 <meta property="og:type" content="article" />
-<meta content=" - 飞鸟物联·智享云端" property="og:title">
-<meta content="title: &amp;ldquo;【译】Basemap手册——第二章 进阶（三）&amp;rdquo; date: 2020-02-04T17:01:01&#43;08:00 draft: true
- 这几个函数在第一章中都使用过，这里再稍微详细说一下
+<meta content="【译】Basemap手册——第二章（三） 进阶 - 飞鸟物联·智享云端" property="og:title">
+<meta content="这几个函数在第一章中都使用过，这里再稍微详细说一下
 plot 在地图上绘制标记和线条，该函数有如下参数：
 plot(x, y, *args, **kwargs)
   x 和y可以是浮点型数据投影单位表示的位置（画标记），也可以是点的列表（画线段）
@@ -52,13 +49,13 @@ plot(x, y, *args, **kwargs)
   默认的标记是点
   默认的颜色是黑色
   下面的例子绘制一个点：
-import matplotlib.pyplot as pltmap = Basemap(projection=&#39;ortho&#39;, lat_0=30, lon_0=112)map.drawmapboundary(fill_color=&#39;aqua&#39;)map.fillcontinents(color=&#39;coral&#39;,lake_color=&#39;aqua&#39;)map.drawcoastlines()x, y = map(112, 30) # x是经度，y是纬度map.plot(x, y, marker=&#39;D&#39;,color=&#39;m&#39;)plt.show()效果如下：
+import matplotlib.pyplot as plt map = Basemap(projection=&#39;ortho&#39;, lat_0=30, lon_0=112) map.drawmapboundary(fill_color=&#39;aqua&#39;) map.fillcontinents(color=&#39;coral&#39;,lake_color=&#39;aqua&#39;) map.drawcoastlines() x, y = map(112, 30) # x是经度，y是纬度 map.plot(x, y, marker=&#39;D&#39;,color=&#39;m&#39;) plt.show() 效果如下：
 如果参数是数组列表，markers=None，那么绘制的是线段：
-from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=120)map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;)map." property="og:description">
+from mpl_toolkits.basemap import Basemap import matplotlib.pyplot as plt map = Basemap(projection=&amp;#39;ortho&amp;#39;, lat_0=30, lon_0=120) map.drawmapboundary(fill_color=&amp;#39;aqua&amp;#39;) map.fillcontinents(color=&amp;#39;coral&amp;#39;,lake_color=&amp;#39;aqua&amp;#39;) map.drawcoastlines() lons = [169.6, 139, 144,134] lats = [64, 35, 13, 7] x, y = map(lons, lats) map." property="og:description">
 <meta property="og:url" content="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%B8%89/" />
 <meta property="og:site_name" content="飞鸟物联·智享云端" />
 
-
+<meta property="article:published_time" content="2020-02-04 17:10:45 &#43;0800 CST" />
 
 
 
@@ -68,11 +65,11 @@ from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = B
 { 
     "@context": "http://schema.org", 
     "@type": "BlogPosting",
-    "headline": "",
+    "headline": "【译】Basemap手册——第二章（三） 进阶",
     "genre": "",  
     "url": "https:\/\/birdflyiot.github.io\/posts\/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%B8%89\/",
-    "datePublished": "0001-01-01 00:00:00 \x2b0000 UTC",
-    "description": "title: \x26ldquo;【译】Basemap手册——第二章 进阶（三）\x26rdquo; date: 2020-02-04T17:01:01\x2b08:00 draft: true\n 这几个函数在第一章中都使用过，这里再稍微详细说一下\nplot 在地图上绘制标记和线条，该函数有如下参数：\nplot(x, y, *args, **kwargs)\n  x 和y可以是浮点型数据投影单位表示的位置（画标记），也可以是点的列表（画线段）\n  如果关键字latlon设置为True，x和y会被转换成经纬度，但是在老版本中不起作用。\n  默认的标记是点\n  默认的颜色是黑色\n  下面的例子绘制一个点：\nimport matplotlib.pyplot as plt\rmap = Basemap(projection=\x27ortho\x27, lat_0=30, lon_0=112)\rmap.drawmapboundary(fill_color=\x27aqua\x27)\rmap.fillcontinents(color=\x27coral\x27,lake_color=\x27aqua\x27)\rmap.drawcoastlines()\rx, y = map(112, 30) # x是经度，y是纬度\rmap.plot(x, y, marker=\x27D\x27,color=\x27m\x27)\rplt.show()\r效果如下：\n如果参数是数组列表，markers=None，那么绘制的是线段：\nfrom mpl_toolkits.basemap import Basemap\rimport matplotlib.pyplot as plt\rmap = Basemap(projection=\x26#39;ortho\x26#39;, lat_0=30, lon_0=120)\rmap.drawmapboundary(fill_color=\x26#39;aqua\x26#39;)\rmap.",
+    "datePublished": "2020-02-04 17:10:45 \x2b0800 CST",
+    "description": "这几个函数在第一章中都使用过，这里再稍微详细说一下\nplot 在地图上绘制标记和线条，该函数有如下参数：\nplot(x, y, *args, **kwargs)\n  x 和y可以是浮点型数据投影单位表示的位置（画标记），也可以是点的列表（画线段）\n  如果关键字latlon设置为True，x和y会被转换成经纬度，但是在老版本中不起作用。\n  默认的标记是点\n  默认的颜色是黑色\n  下面的例子绘制一个点：\nimport matplotlib.pyplot as plt map = Basemap(projection=\x27ortho\x27, lat_0=30, lon_0=112) map.drawmapboundary(fill_color=\x27aqua\x27) map.fillcontinents(color=\x27coral\x27,lake_color=\x27aqua\x27) map.drawcoastlines() x, y = map(112, 30) # x是经度，y是纬度 map.plot(x, y, marker=\x27D\x27,color=\x27m\x27) plt.show() 效果如下：\n如果参数是数组列表，markers=None，那么绘制的是线段：\nfrom mpl_toolkits.basemap import Basemap import matplotlib.pyplot as plt map = Basemap(projection=\x26#39;ortho\x26#39;, lat_0=30, lon_0=120) map.drawmapboundary(fill_color=\x26#39;aqua\x26#39;) map.fillcontinents(color=\x26#39;coral\x26#39;,lake_color=\x26#39;aqua\x26#39;) map.drawcoastlines() lons = [169.6, 139, 144,134] lats = [64, 35, 13, 7] x, y = map(lons, lats) map.",
     "author": {
         "@type": "Person",
         "name": ""
@@ -133,16 +130,13 @@ from mpl_toolkits.basemap import Basemapimport matplotlib.pyplot as pltmap = B
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
           <header class="post-header">
-            <h1 class="post-title" itemprop="name headline"></h1>
-            <p class="post-meta"><time datetime='0001-01-01T00:00:00Z' itemprop="datePublished">January 1, 0001</time></p>
+            <h1 class="post-title" itemprop="name headline">【译】Basemap手册——第二章（三） 进阶</h1>
+            <p class="post-meta"><time datetime='2020-02-04T17:10:45&#43;08:00' itemprop="datePublished">February 4, 2020</time></p>
                  
           </header>
 
           <div class="post-content" itemprop="articleBody">
-            <p>title: &ldquo;【译】Basemap手册——第二章 进阶（三）&rdquo;
-date: 2020-02-04T17:01:01+08:00
-draft: true</p>
-<hr>
+            <hr>
 <p><em>这几个函数在第一章中都使用过，这里再稍微详细说一下</em></p>
 <h1 id="plot">plot</h1>
 <p>在地图上绘制标记和线条，该函数有如下参数：</p>
@@ -177,7 +171,7 @@ map.plot(x, y, marker='D',color='m')
 
 plt.show()
 </code></pre><p>效果如下：</p>
-<p><img src="pic%5C0202%5C01.png" alt="image-20200202185657700">
+<p><img src="01.png" alt="image-20200202185657700">
 如果参数是数组列表，markers=None，那么绘制的是线段：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> mpl_toolkits.basemap <span style="color:#f92672">import</span> Basemap
 <span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
@@ -197,7 +191,7 @@ x, y <span style="color:#f92672">=</span> map(lons, lats)
 map<span style="color:#f92672">.</span>plot(x, y, marker<span style="color:#f92672">=</span>None,color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">m</span><span style="color:#e6db74">&#39;</span>)
 
 plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="pic%5C0202%5C02.png" alt="image-20200202192344935"></p>
+</code></pre></div><p><img src="02.png" alt="image-20200202192344935"></p>
 <h1 id="scatter">scatter</h1>
 <p>在地图上绘制多个点</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">scatter(x, y, <span style="color:#f92672">*</span>args, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>kwargs)
@@ -223,10 +217,10 @@ map <span style="color:#f92672">=</span> Basemap(projection<span style="color:#f
               lat_0<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>, lon_0<span style="color:#f92672">=</span><span style="color:#ae81ff">114</span>)
 
 map<span style="color:#f92672">.</span>drawmapboundary(fill_color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">aqua</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#75715e"># map.fillcontinents(color=&#39;coral&#39;,lake_color=&#39;aqua&#39;)</span>
+<span style="color:#75715e"># map.fillcontinents(color=&#39;coral&#39;,lake_color=&#39;aqua&#39;)</span>
 map<span style="color:#f92672">.</span>drawcoastlines()
 
-lons <span style="color:#f92672">=</span> [<span style="color:#ae81ff">116</span>, <span style="color:#ae81ff">121</span>, <span style="color:#ae81ff">113</span>, <span style="color:#ae81ff">114</span>] <span style="color:#75715e"># 北上广武</span>
+lons <span style="color:#f92672">=</span> [<span style="color:#ae81ff">116</span>, <span style="color:#ae81ff">121</span>, <span style="color:#ae81ff">113</span>, <span style="color:#ae81ff">114</span>] <span style="color:#75715e"># 北上广武</span>
 lats <span style="color:#f92672">=</span> [<span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">30</span>]
 
 x, y <span style="color:#f92672">=</span> map(lons, lats)
@@ -236,7 +230,7 @@ map<span style="color:#f92672">.</span>scatter(x, y, marker<span style="color:#f
 plt<span style="color:#f92672">.</span>show()
 
 </code></pre></div><p>效果如下：</p>
-<p><img src="pic%5C0202%5C03.png" alt="image-20200202205758269"></p>
+<p><img src="03.png" alt="image-20200202205758269"></p>
 <h1 id="text">text</h1>
 <p>在地图上写字</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">text(x,y,s,fontdict<span style="color:#f92672">=</span>None,withdas<span style="color:#f92672">=</span>False,<span style="color:#f92672">*</span><span style="color:#f92672">*</span>kwargs)
@@ -284,7 +278,7 @@ plt<span style="color:#f92672">.</span>text(x, y, <span style="color:#e6db74"></
 plt<span style="color:#f92672">.</span>show()
 
 </code></pre></div><p>效果如下：</p>
-<p><img src="pic%5C0202%5C04.png" alt="image-20200202212356431"></p>
+<p><img src="04.png" alt="image-20200202212356431"></p>
 
           </div>
 
@@ -296,8 +290,8 @@ plt<span style="color:#f92672">.</span>show()
     <div class="row">
             <ul class="pager">
              
-                    <li><a class="next" href="https://birdflyiot.github.io/pages/about/">&laquo; About</a></li>
               
+                <li><a class="previous" href="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/">【译】Basemap手册  第二章 进阶（二） &raquo;</a></li>
               
             </ul>
     </div>
@@ -318,6 +312,12 @@ plt<span style="color:#f92672">.</span>show()
                 
 
                       <li>
+                      <p><a href="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%B8%89/">【译】Basemap手册——第二章（三） 进阶</a><small>&nbsp;&nbsp;February 4, 2020</small></p>
+                      </li>
+
+                
+
+                      <li>
                       <p><a href="https://birdflyiot.github.io/posts/%E8%AF%91basemap%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BA%8C/">【译】Basemap手册  第二章 进阶（二）</a><small>&nbsp;&nbsp;February 2, 2020</small></p>
                       </li>
 
@@ -325,12 +325,6 @@ plt<span style="color:#f92672">.</span>show()
 
                       <li>
                       <p><a href="https://birdflyiot.github.io/posts/basemap%E6%89%8B%E5%86%8C%E7%AC%AC%E4%BA%8C%E7%AB%A0%E8%BF%9B%E9%98%B6%E4%B8%80%E5%AD%A6%E4%B9%A0%E7%BB%98%E5%88%B6%E7%96%AB%E8%AF%B7%E5%9C%B0%E5%9B%BE/">Basemap手册——第二章进阶（一）学习绘制疫情地图</a><small>&nbsp;&nbsp;February 1, 2020</small></p>
-                      </li>
-
-                
-
-                      <li>
-                      <p><a href="https://birdflyiot.github.io/posts/markdownv%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">Markdownv常用语法</a><small>&nbsp;&nbsp;January 10, 2020</small></p>
                       </li>
 
                 
